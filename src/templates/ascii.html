@@ -10,8 +10,22 @@
  <body>
     <div id="topnav">
       <a class="active" href="">PROJECTS</a>
-      <a href="">ABOUT</a>
+      <a href="/src/templates/index.html">ABOUT</a>
     </div>
+    <h1>Upload new File</h1>
+  
+    <form method="post" enctype=multipart/form-data>
+      <p><input type="file" name=file>
+         <input type="submit" value=Upload>
+    </form>
+ 
+    <h1>Result:</h1>
+    {% if msg %}
+    <h1>{{ msg }}</h1>
+    {% endif %}
+    {% if img_src %}
+      <img style="max-height: 800px;" src="data:image/jpeg;base64, {{ img_src }}">
+    {% endif %}
     
     <script src="../static/index.js"></script> 
   </body>
