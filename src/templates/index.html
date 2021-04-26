@@ -9,11 +9,11 @@
  </head>
  <body>
     <div id="topnav">
-      <a href="#resume">RESUME</a>
-      <a href="#contact">CONTACT</a>
-      <a href="#work">WORK</a>
-      <a href="#project">PROJECTS</a>
-      <a class="active" href="#about">ABOUT</a>
+      <a onclick="activateMenu(0)" href="#resume">RESUME</a>
+      <a onclick="activateMenu(1)" href="#contact">CONTACT</a>
+      <!-- <a href="#work">WORK</a> -->
+      <a onclick="activateMenu(2)" href="#project">PROJECTS</a>
+      <a onclick="activateMenu(3)" class="active" href="#about">ABOUT</a>
     </div>
   
 
@@ -28,7 +28,7 @@
     <a href="https://www.github.com/jaykim97" target="_blank" ><img src="../static/logos/GitHub-Mark-32px.png"></a>
     <a href="https://www.linkedin.com/in/jaykim97" target="_blank"><img src="../static/logos/linkedin.png" alt=""></a>
     <a target="_blank"><img onclick="showEmail()" src="../static/logos/email.png" alt=""></a>
-    <a id="emaillink" href="mailto: jay.jikyung.kim@gmail.com">jay.jikyung.kim@gmail.com</a>
+    <a id="emaillink1" href="mailto: jay.jikyung.kim@gmail.com">jay.jikyung.kim@gmail.com</a>
   </section>
 
   <section id="aboutme"> 
@@ -50,7 +50,10 @@
       <div>Project Title</div>
       <div>
         <div><img class="projectImgLeft" src="../static/logos/tempcode.jpg"></div>
-        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
+        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+          <a href="/src/templates/ascii.html">VISIT</a>
+        </div>
+
       </div>
     </div>
     
@@ -62,30 +65,36 @@
       </div>
     </div>
   </section>
-
-  <section id="work">
-    <div>WHERE I'VE WORKED</div>
-    <br>
-    <div class="row">
-      <div class="column">
-        2018
+  <!-- 
+    <section id="work">
+      <div>WHERE I'VE WORKED</div>
+      <br>
+      <div class="row">
+        <div class="column">
+          2018
+        </div>
+        <div class="column">
+          title of the company
+        </div>
       </div>
-      <div class="column">
-        title of the company
-      </div>
-    </div>
-  </section>
+    </section> -->
   
   <section id="contact">
     <div class="sectionTitle">CONTACT</div>
-      <div>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </div>
+    <div class="margin-right-shift">
+      <div class="contect-text" style="margin-bottom: 5%;">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </div>
       <a href="https://www.github.com/jaykim97" target="_blank"><img src="../static/logos/GitHub-Mark-32px.png"></a>
       <a href="https://www.linkedin.com/in/jaykim97" target="_blank"><img src="../static/logos/linkedin.png" alt=""></a>
-      <a href="jay.jikyung.kim@gmail.com" target="_blank"><img src="../static/logos/email.png" alt=""></a>
+      <a target="_blank"><img onclick="showEmail2()" src="../static/logos/email.png" alt=""></a>
+      <a id="emaillink2" href="mailto: jay.jikyung.kim@gmail.com">jay.jikyung.kim@gmail.com</a>
+    </div>
   </section>
   <section id="resume">
     <div class="sectionTitle">RESUME</div>
-   
+    <div style="text-align: center;"><a href="../static/Jay_Kim_Resume_web.pdf" target="_blank">Download</a></div>
+    <img src="../static/logos/Jay Kim Resume.png" style="width: 100%;">
+    
+
     <!-- <img src="../static/logos/Jay Kim Resume.png" style="width: 100%;"> -->
   </section>
   
