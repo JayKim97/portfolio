@@ -70,12 +70,18 @@ section {
   margin: 7% 0;
 }
 
-#emaillink {
+#emaillink1 {
   text-decoration: none;
   color: black;
   vertical-align: 10px;
   display: none;
-  animation: animateleft 1s;
+}
+
+#emaillink2 {
+  text-decoration: none;
+  color: black;
+  vertical-align: 10px;
+  display: none;
 }
 
 #about a img {
@@ -136,9 +142,22 @@ section {
   clear: both;
 }
 
+#contact div.margin-right-shift {
+  margin: 5% 3%;
+}
+
 #contact a img {
   height: 32px;
   margin-right: 3%;
+}
+
+#resume a {
+  text-decoration: none;
+  color: grey;
+}
+
+#resume a:hover {
+  color: black;
 }
 
 .animate-left {
@@ -153,5 +172,18 @@ section {
   to {
     left: 0;
     opacity: 1;
+  }
+}
+
+.animation-gone {
+  position: relative;
+  animation: animationgone 1s;
+}
+@keyframes animationgone {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }
