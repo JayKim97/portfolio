@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+   <title>Jay Kim</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" >
+   <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+ </head>
+ <body>
+    <div id="topnav">
+      <a style="font-size: 20px;" id="pageSubTitle">Recipe Finder</a>
+      <a  href="/#project">PROJECTS</a>
+      <a href="/">HOME</a>
+    </div>
+    <section>
+      <div>Recipt to process:</div>
+      <img style="width: 300px;" src="{{ url_for('static', filename='recipeFinder/refImage.jpg') }}" alt="">
+      {% if curIngs %}
+      <form method="post" enctype=multipart/form-data>
+        <input style="display: none;" name="ings" type="text" value="{{curIngs}}">
+        <input class="demoButton" style="border-radius: 0; margin: 0;" type="submit" value=Upload>
+      </form>
+      {% endif %}
+      <div style="height: 10px;"></div>
+      {% if newIngs %}
+      <a class="demoButton" style="border-radius: 0; margin: 0;" href="/recipefinder">Retry demo?</a>
+      {% endif %}
+
+      {% if curIngs %}
+      <div>Current Ingredients:</div>
+      <div>{{curIngs}}</div>
+      {% endif %}
+
+
+      {% if newIngs %}
+      <div style="height: 10px;"></div>
+      <br>
+        <div>New Ingredients from the recipt:</div>
+        <div>{{newIngs}}</div>
+      {% endif %}
+      <br>
+      <div>New Recipes:</div>
+      <ul>
+        {%for rec in newrecipes %}
+        <li><a href={{rec[1]}}>{{rec[0]}}</a></li>
+       {% endfor %}
+      </ul>
+      <br>
+      <div>Recipes:</div>
+      <ul>
+        {%for rec in recipes %}
+         <li><a href={{rec[1]}}>{{rec[0]}}</a></li>
+        {% endfor %}
+      </ul>
+      
+
+
+
+    </section>
+    
+
+  
+    <script src="{{ url_for('static', filename='index.js') }}"></script> 
+  </body>
+</html>

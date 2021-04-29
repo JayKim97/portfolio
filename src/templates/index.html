@@ -3,26 +3,29 @@
  <head>
   <meta charset="UTF-8">
    <title>Jay Kim</title>
-   <link rel="stylesheet" href="../static/style.css">
+   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" >
    <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
  </head>
- <body>
+ <body onload="loadStart()">
     <div id="topnav">
       <a onclick="activateMenu(0)" href="#resume">RESUME</a>
       <a onclick="activateMenu(1)" href="#contact">CONTACT</a>
       <!-- <a href="#work">WORK</a> -->
       <a onclick="activateMenu(2)" href="#project">PROJECTS</a>
-      <a onclick="activateMenu(3)" class="active" href="#about">ABOUT</a>
+      <a onclick="activateMenu(3)"  href="#aboutme">ABOUT</a>
+      <a onclick="activateMenu(4)" class="active" href="#about">HOME</a>
+      
     </div>
   
 
-  <section id="about">
+  <section id="about" >
     <div class="grid-continer">
       <div class="hi">Hi, I'm</div>
-      <div class="title animate-left" id="one">JAY KIM</div>
+      <div class="title animate-left" style="z-index:-1;" id="one">JAY KIM</div>
       <div class="subtitle" id="two">a software developer.</div>
-      <div class="subtext">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</div>
+      <br>
+      <!-- <div class="subtext">I'm a full-stack web/software developer located in Toronto. </div> -->
       <div class="e"></div>
     </div>
     <a href="https://www.github.com/jaykim97" target="_blank" ><img src="../static/logos/GitHub-Mark-32px.png"></a>
@@ -35,41 +38,73 @@
     <div class="sectionTitle">ABOUT ME</div>
       <div><img class="faceImg" src="../static/logos/face.jpeg"></div>
       <div> 
-        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+        <div>Hi! I'm Jay, a developer based in Toronto, Ontario.</div>
         <br>
-        <div>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </div>
+        <!-- <div>As a formal busienss student turned computer scientist, I find excitement in tackling everyday problem with an entrepreneurial mindset.</div> -->
+        <div>I find excitement in tackling everyday problems with entrepreneurial and user centric approaches.</div>
         <br>
-        <div>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+        <div>As a former commerce student turned software developer, I've been able to leverage both my business knowledge and technical expertise when working with clients.</div>
+        <br>
+        <br>
+        <div>Technologies I've worked with:</div>
+        <br>
+        <div class="row" style="margin-left: 5%;">
+          <div class="column-3">
+            <li>Python</li>
+            <li>Java</li>
+            <li>Unix/Linux</li>
+          </div>
+          <div class="column-3" >
+            <li>Node.js/Express.js</li>
+            <li>MongoDB</li>
+            <li>React.js</li>
+          </div>
+          <div class="column-3">
+            <li>Flask</li>
+            <li>Django</li>
+            <li>ARM</li>
+          </div>
+        </div>
       </div>
   </section>
 
 
   <section id="project">
     <div class="sectionTitle">Projects</div>
+    <br>
     <div class="projectTile">
-      <div>Project Title</div>
-      <div class="row">
-        <div class="column">
-          <img class="projectImgLeft" src="../static/logos/tempcode.jpg">
+      <div class="row" >
+        <div class="column" style="width: 30%;">
+          <img style="width: 100%;" class="projectImgLeft" src="{{ url_for('static', filename='logos/asciiart.png') }}">
         </div>
-        <div class="column">
-          <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
-          <a href="/ascii">VISIT</a>
+        <div class="column"  style="width: 65%; padding-left: 5%;" >
+          <div class="projectName">Ascii Art Generator</div>
+          <div style=" padding-top: 5%;">Create your own ASCII art from an image with automatic size and shade adjustment for optimal results</div>
+          <br>
+          <div style="">Stack: Python, Flask, OpenCV, Pillow, Numpy</div>
+          <a style="margin-left: 5%" href="https://github.com/JayKim97/jpeg2asciiflask"  target="_blank" ><img style="transform: translateY(10px);" src="../static/logos/GitHub-Mark-32px.png"></a>
+          <a class="demoButton" href="/ascii">Demo</a>
         </div>
-      </div>
-      <div>
-        <div></div>
-        
-
       </div>
     </div>
-    
+    <br>
     <div class="projectTile">
-      <div >Project Title</div>
-      <div>
-        <div><img class="projectImgRight" src="../static/logos/tempcode.jpg"></div>
-        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
+      <div class="row" >
+        <div class="column"  style="width: 65%;" >
+          <div class="projectName">Recipe Finder</div>
+          <div style=" padding-top: 5%;">Recipe Finder keeps track of the ingredients in your fridge and show all the delicious recipes you can create.</div>
+          <br>
+          <div>Stack: Python, Flask, MongoDB, OpenCV</div>
+          <a style="margin-left: 5%" href="https://github.com/JayKim97/recipeFinder"  target="_blank" ><img style="transform: translateY(10px);" src="../static/logos/GitHub-Mark-32px.png"></a>
+          <a class="demoButton" href="/recipefinder">Demo</a>
+        </div>
+        <div class="column" style="width: 30%;">
+          <img style="width: 100%;" class="projectImgRight" src="{{ url_for('static', filename='logos/recipefinder.jpg') }}">
+        </div>
       </div>
+    </div>
+    <div>
+      <div style=" margin-top: 2%; "><a class="checkout" href="https://github.com/JayKim97"  target="_blank" ><img style="transform: translateY(10px);" src="../static/logos/GitHub-Mark-32px.png"> CHECK OUT MORE PROJECTS </a></div>
     </div>
   </section>
   <!-- 
@@ -89,7 +124,7 @@
   <section id="contact">
     <div class="sectionTitle">CONTACT</div>
     <div class="margin-right-shift">
-      <div class="contect-text" style="margin-bottom: 5%;">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </div>
+      <div class="contect-text" style="margin-bottom: 5%;">I'm currently looking for a new opportunities, my inbox is always open.</div>
       <a href="https://www.github.com/jaykim97" target="_blank"><img src="../static/logos/GitHub-Mark-32px.png"></a>
       <a href="https://www.linkedin.com/in/jaykim97" target="_blank"><img src="../static/logos/linkedin.png" alt=""></a>
       <a target="_blank"><img onclick="showEmail2()" src="../static/logos/email.png" alt=""></a>
@@ -98,7 +133,7 @@
   </section>
   <section id="resume">
     <div class="sectionTitle">RESUME</div>
-    <div style="text-align: center;"><a href="../static/Jay_Kim_Resume_web.pdf" target="_blank">Download</a></div>
+    <div "><a href="../static/Jay_Kim_Resume_web.pdf" target="_blank">Download</a></div>
     <img src="../static/logos/Jay Kim Resume.png" style="width: 100%;">
     
 
@@ -107,6 +142,6 @@
   
   
 
-  <script src="../static/index.js"></script> 
+  <script src="{{ url_for('static', filename='index.js') }}"></script> 
  </body>
 </html>

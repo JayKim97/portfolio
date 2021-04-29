@@ -15,15 +15,22 @@ PIXEL_ON = 0
 PIXEL_OFF = 255
 
 
-def asciiTran(filename):
+def asciiTran(original):
     # scaledImage = scaleImage("./static/uploads/"+filename)
-    scaledImage = scaleImage(filename)
+
+    scaledImage = scaleImage(original)
     textifed = textifyImage(scaledImage)
     resImage = text_image(textifed)
     data = io.BytesIO()
     resImage.save(data, "JPEG")
     enco_img = base64.b64encode(data.getvalue())
-    return enco_img
+
+    pilori = Image.fromarray(cv2.cvtColor(original, cv2.COLOR_BGR2RGB))
+    data = io.BytesIO()
+    pilori.save(data, "JPEG")
+    ori_img = base64.b64encode(data.getvalue())
+
+    return enco_img, ori_img
 
 
 def simple(i):

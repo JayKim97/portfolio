@@ -44,11 +44,6 @@ section {
   margin-right: 25%;
 }
 
-#about {
-  margin-left: 25%;
-  margin-right: 25%;
-}
-
 #about div.hi {
   font-size: 22px;
 }
@@ -116,6 +111,10 @@ section {
   height: 300px;
 }
 
+.projectName {
+  font-weight: bold;
+}
+
 .projectImgLeft {
   float: left;
   width: 300px;
@@ -134,6 +133,11 @@ section {
 .column {
   float: left;
   width: 50%;
+}
+
+.column-3 {
+  float: left;
+  width: 33%;
 }
 
 .row:after {
@@ -157,6 +161,73 @@ section {
 }
 
 #resume a:hover {
+  color: black;
+}
+
+#ascii {
+  text-align: center;
+}
+
+#ascii .upload {
+  border: 10px black;
+}
+
+/* IMAGE INPUT */
+.js .inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.inputfile + label {
+  max-width: 80%;
+  font-size: 1.25rem;
+  /* 20px */
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 0.625rem 1.25rem;
+  /* 10px 20px */
+}
+
+.no-js .inputfile + label {
+  display: none;
+}
+
+.inputfile:focus + label,
+.inputfile.has-focus + label {
+  outline: 1px dotted #000;
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+.inputfile + label svg {
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  fill: currentColor;
+  margin-top: -0.25em;
+  /* 4px */
+  margin-right: 0.25em;
+  /* 4px */
+}
+
+.inputfile-3 + label {
+  color: grey;
+}
+
+.inputfile-3:focus + label,
+.inputfile-3.has-focus + label,
+.inputfile-3 + label:hover {
+  color: black;
+}
+
+.inputfile-3:invalid + label {
   color: black;
 }
 
@@ -186,4 +257,73 @@ section {
   to {
     opacity: 0;
   }
+}
+
+@media (max-width: 1000px) {
+  section {
+    padding-top: 15%;
+    padding-bottom: 10%;
+
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+}
+
+.demoButton {
+  margin: auto;
+  text-decoration: none;
+  padding: 4px;
+  border: 1px solid black;
+  border-radius: 25px;
+  color: grey;
+  margin: 5% 2% 2% 5%;
+}
+
+.demoButton:hover {
+  color: black;
+}
+
+#topnav a#pageSubTitle {
+  color: black;
+  float: left;
+  font-weight: bold;
+  font-size: 20;
+}
+
+#pageSubtitle:hover {
+  cursor: noen;
+}
+
+#ascii div.title {
+  font-weight: bold;
+  font-size: 30px;
+}
+#ascii input.button {
+  border: 1px solid gray;
+  color: gray;
+  background-color: white;
+}
+
+#ascii input.enabled:hover {
+  border: 1px solid black;
+  color: black;
+  background-color: white;
+  cursor: pointer;
+}
+
+#ascii input.disabled:hover {
+}
+
+.checkout {
+  color: grey;
+  text-decoration: none;
+  border: 2px solid grey;
+  border-radius: 25px;
+  padding: 10px;
+}
+
+.checkout:hover {
+  color: black;
+  background-color: lightgrey;
+  border: 2px solid black;
 }
